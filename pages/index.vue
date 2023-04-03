@@ -1,6 +1,7 @@
 <script setup lang="ts">
+let theVibrant = resolveComponent('TheVibrant');
+let theDull = resolveComponent('TheDull');
 const { data: posts } = await useFetch("/api/posts");
-
 </script>
 
 
@@ -14,4 +15,10 @@ const { data: posts } = await useFetch("/api/posts");
         </div>
     </div>
     <div v-else>no posts</div>
+
+    <component :is="theVibrant" :title="'helloooooo'" />
+    <component :is="theDull" />
+
+    <!-- <TheVibrant /> -->
 </template>
+ 

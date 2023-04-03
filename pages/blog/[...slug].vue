@@ -1,32 +1,26 @@
 <script setup lang="ts">
+import { Post } from '~/types';
+
 const route = useRoute();
 const slug = route.params.slug[0] as string;
 const { data: posts } = await useFetch("/api/posts");
 
-type Post = {
-  title: string;
-  slug: string;
-};
-
-type Posts = Post[];
-
 const post = computed(() => {
+  if (!posts.value) return null;
   return posts.value.find((post: Post) => post.slug === slug);
 });
-
-
 
 </script>
 
 <template>
   <article class="" v-if="post">
-   <h1>
+    <h1>
       {{ post.title }}
-   </h1>
+    </h1>
 
-   slug: {{ slug }}
+    slug: {{ slug }}
 
-   <NuxtLink to="/blog">back</NuxtLink>
+    <NuxtLink to="/blog">back</NuxtLink>
 
   </article>
 </template>
