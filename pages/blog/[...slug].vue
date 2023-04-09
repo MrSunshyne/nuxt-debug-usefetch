@@ -18,6 +18,12 @@ const post = computed(() => {
       {{ post.title }}
     </h1>
 
+    <OgImageStatic
+      component="OgImageBlog"
+      :description="'description here'"
+      :customImage="'/images/post-image.png'"
+    />
+
     slug: {{ slug }}
 
     <NuxtLink to="/blog">back</NuxtLink>
