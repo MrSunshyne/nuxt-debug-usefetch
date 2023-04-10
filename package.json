@@ -11,6 +11,6 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.6.5",
     "nuxt": "^3.3.2",
-    "nuxt-og-image": "^1.4.22"
+    "nuxt-og-image": "2.0.0-beta.13"
   }
 }
