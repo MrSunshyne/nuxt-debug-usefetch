@@ -6,6 +6,8 @@ const { data: posts } = await useFetch("/api/posts");
 
 <template>
     <h1 class="text-4xl font-bold">Blog</h1>
+    <OgImageStatic component="OgImageBlog" :description="'BLOG LIST OG'" :customImage="'/images/post-image.png'" />
+
     <div class="py-5" v-if="posts">
         <div v-for="post in posts" class="text-sm lg:text-xl flex gap-2 my-3">
             <nuxt-link :to="'/blog/' + post.slug" class="hover:text-green-500">
